@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+   <style>
+    .container{
+        float: left;
+        padding: 15px;
+    }
+   .div1{
+        background-color: yellow;
+        
+        float: left;
+        
+    }
+    
+    .div2{
+        background-color: green;
+        
+        float: left;
+    }
+    .div3{
+        background-color:blue;
+        
+        float: left;
+    }
+   
+    .flex_container{
+        display: flex;
+    
+        flex-wrap: row wrap;
+        background-color: dodgerblue;
+        
+    
+    }
+    .flex_container >div{
+        background-color: #f1f1f1;
+        margin: 10px;
+        padding: 20px;
+        font-size: 30px;
+    }
+
+   </style>
+    
+
+
+</head>
+<body>
+
+<div class="container">
+    <div class="div1">
+        div1
+    </div>
+    <div class="div2">
+        div2
+    </div>
+    <div class="div3">
+        div3     
+    </div>
+
+
+</div>
+
+<div class="flex_container">
+    <div>    1</div>
+    <div>    2</div>
+    <div>    3</div>
+    <div>    4</div>
+    <div>    5</div>
+    <div>    6</div>
+    <div>    7</div>
+    <div>    8</div>
+    <div>    9</div>
+
+</div>
+
+
+<p id="obj"></p>    
+<p id="obj2"></p>
+<p id="hObj"></p>
+<p id="HHObj"></p>
+<p id="demo"></p>
+<p id="demoFind"></p>
+<p id="redObj"></p>
+
+</body>
+
+
+
+<script>
+const person={
+    name:"Bheesham",
+    age:30,
+    department:"CS"
+};
+let text=person.name;
+let text2=person.age;
+let text3=person.department;
+
+
+document.getElementById("obj").innerHTML="<strong> name: </strong>"+  text+" age: " + text2+" department:" + text3;
+
+const secPerson={
+    fname:"john",
+    lname:"Doe",
+    Age:25
+};
+let secEmp="";
+for(let x in secPerson){
+    secEmp+=secPerson[x]; 
+}
+document.getElementById("obj2").innerHTML=secEmp;
+
+
+let arrFunction=(a,b)=>a*b;
+
+
+
+
+const hOrder=[4,16,36];
+const newArr=hOrder.map(Math.sqrt)
+document.getElementById("hObj").innerHTML=newArr;
+
+const HOrderArr=["IBA","Nust","Lums"];
+let htext = "";
+function myfunction(item,index){
+    htext+=index+":"+item+"<br>";
+}
+HOrderArr.forEach(myfunction)
+document.getElementById("HHObj").innerHTML=htext;
+
+
+const ages = [32, 33, 16, 40];
+
+document.getElementById("demo").innerHTML = ages.filter(checkAdult);
+
+function checkAdult(ages) {
+  return ages >= 18;
+}
+
+const findAge=[21,16,20,19,24];
+function checkAge(age){
+    return age>18;
+
+}
+document.getElementById("demoFind").innerHTML= findAge.find(checkAge);
+
+const numbers=[140,40,50];
+function mysecFunction(total,num){
+    return total - num;
+}
+document.getElementById("redObj").innerHTML=numbers.reduce(mysecFunction);
+
+
+</script>
+ 
+</body>
+</html>
